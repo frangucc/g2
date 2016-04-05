@@ -1,0 +1,42 @@
+doctype html
+html
+  head
+    title Franchino
+
+    meta(charset='utf-8')
+    meta(name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width")
+    meta(name='description', content='The Boy and the Computer is the first graphic novel of its kind and offers a unique educational opportunity for anyone that wants to learn about and play with innovative technology.')
+    meta(name='author', content='Gamifyed, Inc.')
+    meta(name='copyright', content='GAMIFYED, Inc. Copyright (c) 2016')
+    meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
+
+    link(rel='stylesheet' href='/css/foundation.css')
+    link(rel='stylesheet' href='/css/app.min.css')
+    link(rel='stylesheet' href='/css/icon-font.css')
+    link(rel='stylesheet' href='https://code.ionicframework.com/ionicons/2.0.0/css/ionicons.min.css')
+    link(rel='stylesheet' href='/css/jquery.fullPage.css')
+    link(rel='stylesheet' href='/css/examples.css')
+    link(rel='stylesheet' href='/css/menu_sideslide.css')
+    link(rel='stylesheet' href='/css/bookblock.css')
+    link(rel='stylesheet' href='/css/component.css')
+    link(rel='stylesheet' href='/fonts/font-awesome-4.2.0/css/font-awesome.min.css')  
+
+    script(src='/lib/devicejs/lib/device.js')
+    script(src='/socket.io/socket.io.js') 
+    script(src='https://code.jquery.com/jquery-1.11.0.min.js')
+    script(src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery.cycle2/20140216/jquery.cycle2.min.js')
+    script(src='https://code.ionicframework.com/1.0.0-beta.13/js/ionic.bundle.min.js')
+    script(src='cordova.js')
+    script(src='/lib/underscore/underscore.js')
+    script(src='/lib/angular-socket-io/socket.js')
+    script(src='/js/application.js')
+    script(src='/js/jquery.fullPage.js')
+    script(src='/js/bookblock.min.js')
+    script(src='/js/classie.js')
+    script(src='/js/bookshelf.js')
+    script(src='/js/modernizr.custom.js')
+        
+
+  body(ng-app='Franchino' animation='slide-left-right-ios7', ng-controller='AppCtrl')
+    ng-include(src="'main.html'")

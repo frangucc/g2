@@ -1,0 +1,30 @@
+style.
+  .bar-stable {
+  background: transparent !important
+  }
+ion-side-menus(enable-menu-with-back-views='false')
+  ion-side-menu-content
+    ion-nav-bar.bar-stable
+      ion-nav-buttons(side='right')
+        button.button.button-icon.button-clear.ion-navicon(menu-toggle='right') 
+    ion-nav-view(name='menuContent')
+
+  ion-side-menu(side='right')
+    ion-header-bar.bar-stable
+      h1.title Franchino's Stuff
+
+    ion-content
+      ul.list
+        // Note each link has the 'menu-close' attribute so the menu auto closes when clicking on one of these links
+        a.item(href='#/home', menu-close='') Home        
+        a.item(href='#/resume', menu-close='') Resume
+        a.item(href='#/home', menu-close='', ng-controller='ContactSheetCtrl', ng-click='showActionsheet()') Contact Me
+        p(style='margin:-20px;padding:37px;background-color:#202b39;color:#fff') RECENT WORK &nbsp; &darr;
+        a.item(href='#/job-tapcentive', menu-close='') Tapcentive Portal
+        a.item(href='#/job-tapcentive-two', menu-close='') Tapcentive.com
+        a.item(href='#/job-cpgio', menu-close='') CPG.io
+        a.item(href='#/job-medycation', menu-close='') Medycation.com
+        a.item(href='#/job-cst', menu-close='') Chicago Sun Times
+        a.item(href='#/job-koupn', menu-close='') Kou.pn
+        a.item(href='#/job-tround', menu-close='') Tround
+        a.item(href='#/job-monthlys-two', menu-close='') Monthlys.com

@@ -1,0 +1,10 @@
+<style>.slider-slide {
+  padding-top: 40px;
+  text-align: center;
+}
+
+.slider-pager-page i{
+}
+p {
+padding:20px;
+}</style><ion-view id="page-platform-mobile" style="background-color:#b7d400"><ion-content ng-controller="SlidesTapOneCtrl" padding="true" scroll="true" style="padding:0px;margin:0px;"><ion-slide-box show-pager="true"><ion-slide style="min-height:550px;" ng-repeat="item in images"><h2>{{item.alt}}</h2><img src="{{item.url}}"/><p>{{item.text}}</p></ion-slide></ion-slide-box></ion-content></ion-view>

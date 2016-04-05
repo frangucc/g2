@@ -1,0 +1,9 @@
+{
+  "firebase": "gamifyedapp",
+  "public": "www",
+  "ignore": [
+    "firebase.json",
+    "**/.*",
+    "**/node_modules/**"
+  ]
+}

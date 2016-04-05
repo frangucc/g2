@@ -1,0 +1,68 @@
+doctype html
+html
+  head
+    title Franchino
+
+    meta(charset='utf-8')
+    meta(name='viewport', content='initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width')
+    meta(name='description', content='Deliver immersive in-location mobile experiences that increase foot traffic, deepen customer relationships, and inspire loyalty.')
+    meta(name='author', content='TAPCENTIVE, inc.')
+    meta(name='copyright', content='TAPCENTIVE, inc. Copyright (c) 2014')
+    meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
+
+    link(rel='stylesheet' href='/css/foundation.css')
+    link(rel='stylesheet' href='/css/app.min.css')
+    link(rel='stylesheet' href='/css/icon-font.css')
+    link(rel='stylesheet' href='https://code.ionicframework.com/ionicons/2.0.0/css/ionicons.min.css')
+        
+    link(href='css/old/component.css', rel='stylesheet', type='text/css')
+    link(href='css/old/normalize.css', rel='stylesheet', type='text/css') 
+    script(src='js/old/modernizr.custom.js')
+
+    script(src='/lib/devicejs/lib/device.js')
+    script(src='/socket.io/socket.io.js') 
+    script(src='https://code.jquery.com/jquery-1.11.0.min.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery.cycle2/20140216/jquery.cycle2.min.js')
+    script(src='https://code.ionicframework.com/1.0.0-beta.13/js/ionic.bundle.min.js')
+    script(src='cordova.js')
+    script(src='/lib/underscore/underscore.js')
+    script(src='/lib/angular-socket-io/socket.js')
+    script(src='/js/application.js')
+   
+  body.cbp-spmenu-push(ng-app='Franchino', style='background-color:#1c1c1c;', ng-controller='AppCtrl', animation='slide-left-right-ios7')
+    .container
+      .main
+        #grid-gallery.grid-gallery
+          section.grid-wrap
+            ul.grid
+              li.grid-sizer
+              li
+                figure
+                  img(alt='img05', src='http://cl.ly/W4dj/gamify_thumb.jpg')                             
+                  figcaption
+                    h3 Gamify                             
+                    p p centered around youth mechanics training.
+          section.slideshow
+            ul
+              li
+                figure
+                  figcaption
+                    h3 Angular, Ionic and Cordova                                
+                    p Try my hybrid on your mobile phone. Supply your number and I'll text you thelink.                                  
+                    form(action='http://franckejones.nodejitsu.com/message?to=to', method='post')
+                      input(name='to', type='text', value='312-806-7979')
+                      input(type='submit', value='Submit')                                 
+                  img(alt='img01', src='http://cl.ly/W5Cg/hybrid_thumb.jpg')               
+            nav
+              span.icon.nav-prev
+              span.icon.nav-next
+              span.icon.nav-close             
+            .info-keys.icon
+      script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js')
+      script(src='js/old/imagesloaded.pkgd.min.js')
+      script(src='js/old/masonry.pkgd.min.js')
+      script(src='js/old/classie.js')
+      script(src='js/old/cbpGridGallery.js')
+      script.
+        new CBPGridGallery( document.getElementById( 'grid-gallery' ) );
+

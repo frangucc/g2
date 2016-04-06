@@ -35,6 +35,10 @@ Franchino.config ($stateProvider, $urlRouterProvider, $locationProvider, $httpPr
     views: menuContent:
       controller: 'DocsCtrl'
       templateUrl: 'docs/index.html').state('app.about',
+    url: '/landing'
+    views: menuContent:
+      controller: 'LandingCtrl'
+      templateUrl: 'landing.html').state('app.landing',
     url: '/about'
     views: menuContent:
       controller: 'AboutCtrl'
@@ -105,7 +109,9 @@ Franchino.config ($stateProvider, $urlRouterProvider, $locationProvider, $httpPr
       type = undefined
       if config.url.match(/\.html$/) and !config.url.match(/^shared\//)
         if device.tablet()
-          type = 'tablet'
+          Franchino.config 'cfpLoadingBarProvider', (cfpLoadingBarProvider) ->
+            cfpLoadingBarProvider.latencyThreshold = 1500
+
         else if device.mobile()
           type = 'mobile'
         else
@@ -115,6 +121,8 @@ Franchino.config ($stateProvider, $urlRouterProvider, $locationProvider, $httpPr
  }
 Franchino.run ($state) ->
   $state.go 'app.home'
+  
+
 Franchino.run ($rootScope, copy) ->
   $rootScope.copy = copy
   if device.desktop()
@@ -123,8 +131,8 @@ Franchino.run ($rootScope, copy) ->
         verticalCentered: true
         sectionsColor: [
           '#1bbc9b'
-          '#fff'
-          '#7BAABE'
+          '#040b15'
+          '#040b15'
           'whitesmoke'
           '#ccddff'
         ]
@@ -143,7 +151,7 @@ Franchino.run ($rootScope, copy) ->
       return
   else
 
-    
+
     
 Franchino.factory 'Socket', (socketFactory) ->
   socketFactory()
@@ -157,9 +165,12 @@ Franchino.factory 'Docs', (Socket) ->
   Socket.on 'docs', (docs) ->
     service.list = docs
   service
+
+
 Franchino.controller 'HomeCtrl', [
   '$scope'
   ($scope) ->
+
     do ->
       bodyEl = undefined
       closebtn = undefined
@@ -186,6 +197,7 @@ Franchino.controller 'HomeCtrl', [
         head = undefined
         link = undefined
         if device.desktop()
+          
         else if device.mobile()
           $ = document
           cssId = 'myCss'
@@ -442,6 +454,31 @@ Franchino.controller 'JobTapcentiveTwoCtrl', ($scope) ->
 Franchino.controller 'JobCpgioCtrl', ($scope) ->
 Franchino.controller 'JobMedycationCtrl', ($scope) ->
 Franchino.controller 'JobCstCtrl', ($scope) ->
+Franchino.controller 'LandingCtrl', ($scope) ->
+  #youtube script
+  tag = document.createElement("script")
+  tag.src = "//www.youtube.com/iframe_api"
+  firstScriptTag = document.getElementsByTagName("script")[0]
+  firstScriptTag.parentNode.insertBefore tag, firstScriptTag
+  player = undefined
+  onYouTubeIframeAPIReady = ->
+    player = new YT.Player("player",
+      height: "244"
+      width: "434"
+      videoId: "AkyQgpqRyBY" # youtube video id
+      playerVars:
+        autoplay: 0
+        rel: 0
+        showinfo: 0
+
+      events:
+        onStateChange: onPlayerStateChange
+    )
+
+  onPlayerStateChange = (event) ->
+    $(".start-video").fadeIn "normal"  if event.data is YT.PlayerState.ENDED
+
+
 Franchino.controller 'JobKoupnCtrl', ($scope) ->
 Franchino.controller 'JobMedycationCtrl', ($scope) ->
 Franchino.controller 'JobMedycationCtrl', ($scope) ->

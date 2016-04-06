@@ -38,11 +38,28 @@ $font_1: (sans-serif !important)
   z-index: -1
 
 #contentm 
-  background: yellow
-  height: 800px
-  width: 80%
-  margin-top: 200px
+  background: red
+  height: 100%
+  width: 100%
+  margin-top: 0px
 
+.in_panel
+  width: 80%
+  height: 75%
+  top: 0px
+  left: 0px
+  overflow: scroll
+  margin: 10%
+  position: absolute
+
+.spot
+  h1
+    color: #fff !important
+    font-weight: 300 !important
+  h3 
+    text-align: right !important
+    color: #fff !important
+    margin-right: 8%
 
 nav
   .small
@@ -115,8 +132,8 @@ nav
 .button.large 
   width: 350px
   margin-top: 20px
-  background: none !important
-  border: 1px solid $black
+  background: #fff
+  border: 0px solid $black
   color: $color_ebony_clay_approx !important
   &:hover 
     width: 350px
@@ -234,26 +251,56 @@ body > ng-include > ion-nav-view > div > ion-pane > header
 // all the sets of desktop and mobile pages in pairs below
 
 // home page - web and mobile
+#strip
+  background-color: #000000
+  margin: -5% 0 0px 0
+  padding: 0px 0 0 0
+  background-size: cover
+  padding: 10%
+  font-family: $font_2 !important
+  height: 55%
+  font-weight: 300 !important
+  text-align: center
+  font-size: 27% !important
+  h1
+    margin-top: -5%
+    color: #f8821e !important
+    text-align: auto
+    
+  p
+    text-align: center
+    color: #000
+.aside_boxes
+  h1 
+    font-size: 2em
+    font-weight: 300 !important
+  p
+    font-size: 1em
+
 #page-home 
-  background-color: #efefef
+  background-color: #fff !important
   margin: -80px 0 0px 0
   padding: 40px 0 0 0
   background-size: cover
-  min-height: 600px
+  min-height: 85%
   .row 
     padding: 10px 0 20px
-
+  .inner_page-home
+    width: 100%
+    height: 90%
+    text-align: center
   h1 
     font-size: 4em !important
     margin: 0 auto
     color: $white
     text-align: left
-    font-weight: 700
+    font-weight: 300
     margin-bottom: 0
-    letter-spacing: -3px
-    line-height: 100%
+    letter-spacing: -2px
+    line-height: 110%
     font-family: $font_2, $font_3
     padding: 10% 0 0
+    text-align: auto
 
   h4 
     font-size: 1.35em

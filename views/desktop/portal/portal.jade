@@ -1,0 +1,8 @@
+.home
+  h1#logo
+    img(src='/home/auth0_logo_final_blue_RGB.png')
+  img(src='{{auth.profile.picture}}')
+  h2 Welcome {{auth.profile.nickname}}
+  button.btn.btn-lg.btn-primary(ng-click='callApi()') Call API
+  br
+  button.btn-sm.btn-warning(ng-click='logout()') Logout

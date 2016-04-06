@@ -20,6 +20,9 @@ html
     link(rel='stylesheet' href='/css/bookblock.css')
     link(rel='stylesheet' href='/css/component.css')
     link(rel='stylesheet' href='/fonts/font-awesome-4.2.0/css/font-awesome.min.css')  
+    link(rel='stylesheet', type='text/css', href='home/home.css')
+    link(rel='stylesheet', type='text/css', href='login/login.css')
+    
 
     script(src='/lib/devicejs/lib/device.js')
     script(src='/socket.io/socket.io.js') 
@@ -27,6 +30,8 @@ html
     script(src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js')
     script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery.cycle2/20140216/jquery.cycle2.min.js')
     script(src='https://code.ionicframework.com/1.0.0-beta.13/js/ionic.bundle.min.js')
+    script(type='text/javascript', src='/js/auth0-variables.js')
+    script(type='text/javascript', src='https://cdn.auth0.com/js/lock-7.12.min.js')
     script(src='cordova.js')
     script(src='/lib/underscore/underscore.js')
     script(src='/lib/angular-socket-io/socket.js')
@@ -36,7 +41,38 @@ html
     script(src='/js/classie.js')
     script(src='/js/bookshelf.js')
     script(src='/js/modernizr.custom.js')
-        
+
+    script(src='https://cdn.auth0.com/w2/auth0-angular-4.js', type='text/javascript')
+    script(src='//cdn.rawgit.com/auth0/angular-storage/master/dist/angular-storage.js', type='text/javascript')
+    script(src='//cdn.rawgit.com/auth0/angular-jwt/master/dist/angular-jwt.js', type='text/javascript')
+
 
   body(ng-app='Franchino' animation='slide-left-right-ios7', ng-controller='AppCtrl')
+    .menu-wrap
+      nav.menu
+        .icon-list
+          a(href='http://gamifyed.com')
+            i.fa.fa-fw.fa-shopping-cart
+            span Get the Book
+          a(href='/sandbox/chapters/')
+            i.fa.fa-fw.fa-bell-o
+            span Individual Chapters
+          a(href='#')
+            i.fa.fa-fw.fa-newspaper-o
+            span Curriculum R&amp;D
+          a(href='https://www.kickstarter.com/projects/1826823485/the-boy-and-the-computer')
+            i.fa.fa-fw.fa-hand-o-right
+            span Kickstarter
+          a(href='http://twitter.com/gamifyed_')
+            i.fa.fa-fw.fa-twitter
+            span Twitter
+          a(href='http://twitter.com/gamifyed_')
+            i.fa.fa-fw.fa-youtube-play
+            span Youtube
+          a(href='#')
+            i.fa.fa-fw.fa-paper-plane
+            span Login
+          
+      button#close-button.close-button
+    button#open-button.menu-button
     ng-include(src="'main.html'")

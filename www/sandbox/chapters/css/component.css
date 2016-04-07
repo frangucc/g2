@@ -23,6 +23,13 @@ body {
 	position: relative;
 }
 
+h2 {
+	color:#000;
+	font-family: 'Arial';
+	text-align: left;
+}
+
+
 .noscroll {
 	overflow: hidden;
 }
@@ -223,11 +230,16 @@ body {
 
 .dummy-img,
 .dummy-text {
-	max-width: 600px;
+	max-width: 800px;
 	width: 90%;
-	opacity: 0;
-	-webkit-transition: opacity 0.5s, -webkit-transform 0.5s;
-	transition: opacity 0.5s, transform 0.5s;
+	color:#000;
+}
+
+.heading {
+	width:90%;
+	max-width: 800px;
+	margin: 0 auto;
+	padding-top:60px;
 }
 
 .vertical .dummy-img,
@@ -279,9 +291,9 @@ p.dummy-text:nth-child(3) {
 	text-align: left;
 	margin: 0 auto;
 	padding: 10px 0;
-	color: #ddd;
-	font-size: 1em;
-	font-family: 'Blokk', Arial, serif;
+	color: #000;
+	font-size: .6em;
+	font-family: Arial, serif;
 }
 
 .dummy-text:last-child {

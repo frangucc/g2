@@ -48,31 +48,4 @@ html
 
 
   body(ng-app='Franchino' animation='slide-left-right-ios7', ng-controller='AppCtrl')
-    .menu-wrap
-      nav.menu
-        .icon-list
-          a(href='http://gamifyed.com')
-            i.fa.fa-fw.fa-shopping-cart
-            span Get the Book
-          a(href='/sandbox/chapters/')
-            i.fa.fa-fw.fa-bell-o
-            span Chapter Concepts
-          a(href='https://frangucc.gitbooks.io/gamifyed/content/')
-            i.fa.fa-fw.fa-newspaper-o
-            span Research
-          a(href='https://www.kickstarter.com/projects/1826823485/the-boy-and-the-computer')
-            i.fa.fa-fw.fa-hand-o-right
-            span Kickstarter
-          a(href='http://twitter.com/gamifyed_')
-            i.fa.fa-fw.fa-twitter
-            span Twitter
-          a(href='http://twitter.com/gamifyed_')
-            i.fa.fa-fw.fa-youtube-play
-            span Youtube
-          a(href='https://gamifyed.com/account/login')
-            i.fa.fa-fw.fa-paper-plane
-            span Login
-          
-      button#close-button.close-button
-    button#open-button.menu-button
     ng-include(src="'main.html'")

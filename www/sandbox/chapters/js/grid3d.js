@@ -24,7 +24,7 @@
 
 	grid3D.prototype._init = function() {
 		// grid wrapper
-		this.gridWrap = this.el.querySelector( 'div.grid-wrap' );
+		this.gridWrap = this.el.querySelector( '.grid-wrap' );
 		// grid element
 		this.grid = this.gridWrap.querySelector( 'div.grid' );
 		// main grid items

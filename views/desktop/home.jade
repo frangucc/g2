@@ -1,67 +1,72 @@
 .menu-wrap
   nav.menu
     .icon-list
+      p(style="font-size:20px;color:#c5c5c5;font-weight:bold;") Menu
+      br
+      a(href='index.html#/landing')
+        i.fa.fa-fw.fa-question
+        span What is Gamifyed
       a(href='http://gamifyed.com' target='_blank')
         i.fa.fa-fw.fa-shopping-cart
-        span Get the Book
+        span All Products 
       a(href='/sandbox/chapters/' target='_blank')
-        i.fa.fa-fw.fa-bell-o
-        span Chapter Concepts
+        i.fa.fa-fw.fa-star
+        span Influencers
       a(href='https://frangucc.gitbooks.io/gamifyed/content/' target='_blank')
         i.fa.fa-fw.fa-newspaper-o
         span Open Research
+      a(href='index.html#/cast')
+        i.fa.fa-fw.fa-bell-o
+        span Educators
+      a(href='#' target='_blank')
+        i.fa.fa-fw.fa-hand-o-right
+        span Parents
       a(href='https://www.kickstarter.com/projects/1826823485/the-boy-and-the-computer' target='_blank')
         i.fa.fa-fw.fa-hand-o-right
         span Kickstarter
       a(href='http://twitter.com/gamifyed_' target='_blank')
         i.fa.fa-fw.fa-twitter
         span Twitter
-      a(href='http://twitter.com/gamifyed_' target='_blank')
-        i.fa.fa-fw.fa-youtube-play
-        span Youtube
       a(href='https://gamifyed.com/account/login' target='_blank')
-        i.fa.fa-fw.fa-paper-plane
+        i.fa.fa-fw.fa-lock
         span Login
-      
+      a.medium.button(href='https://gamifyed.com/account/register', style='width:100%;position:absolute;bottom:20px;background-color:#f5f5f5;color:#005bba;font-weight:bold;') Create a FREE Account
   button#close-button.close-button
 button#open-button.menu-button
-#fullpage
+#fullpage(ng-controller="HomeCtrl")
   #section0.section
     video#myVideo(autoplay='', loop='', muted='')
       source(src='/img/hud2.mp4', type='video/mp4')
-      source(src='/img/flowers.webm', type='video/webm')
+      source(src='/img/hud2.webm', type='video/webm')
     .layer(style='margin-top:0%;')
       img(src='img/logo.png', alt='Cool')
       br
-      div(style="position:absolute;top:75%;width:100%;text-align:auto;")
+      div(style="position:absolute;top:80%;width:100%;text-align:auto;")
         img(src='img/down.gif', alt='Cool', style='width:100px;position:relative;margin-top:20%;')
   #section2.section
-    .row(style="margin-top:15%;")
-      .spot.inner_page-home
-        h1(style='font-size:2em;') The Node Chronicles will inspire your kids to want to learn about computer science, programming and engineering. Follow along using the 
-          a(href="/index.html#/landing")
-            | book, 
-            a(href="/index.html#/landing")
-              | expansion packs and companion apps
-
-
-      div(style="position:relative;top:80%;width:100%;text-align:auto;")
-        img(src='img/down.gif', alt='Cool', style='width:50px;position:relative;margin-top:20%;opacity:.7')
+    .row(style="margin-top:5%;")
+      .spot.inner_page-home(style='text-align:center !important;margin-top:15%;')
+        h1(style='font-size:2em;') Gamifyed inspires kids of all ages to want to learn about computer science, programming and engineering. Follow along using the 
+          a(href="index.html#/landing") graphic novel, 
+          a(href="index.html#/landing") expansion packs 
+          | and 
+          a(href="index.html#/landing") companion apps.
+        div(style="width:100%;")
+          img(src='img/down.gif', alt='Cool', style='width:50px;opacity:.7;padding-top:20%;')
 
   #section1.section(style="")
-    .layer(style='position:absolute;top:25px;left:4%')
+    .layer(style='position:absolute;top:25px;left:3%')
       img(src='img/logo_white.png', alt='Cool', style='width:60%;')
     .layer(style='position:absolute;top:-24px;right:10%')
-      a.medium.button(href='index.html#/landing', style='margin-top:50px;background-color:#fff;') Learn More
+      a.medium.button(href='index.html#/landing', style='margin-top:50px;background-color:#fff;color:#040b15;') Learn More
       a.medium.button(href='http://gamifyed.com/account/register', style='margin-top:50px;background-color:#c30000;margin-left:20px;color:#fff;') Join Now
     .in_panel(style='text-align: center')
       iframe(width='100%', height='100%', src='https://www.youtube.com/embed/k6zebotwPzQ?modestbranding=1&autohide=1&showinfo=0&controls=0', frameborder='0', allowfullscreen='true')
   #section2.section
     .layer(style='text-align: left;margin-left:10%;')
       h1()
-        a(href='/#/landing' target="_blank" style="color: #fff") I am a Student
+        a(href='/index.html#/landing' target="_blank" style="color: #fff;") I am a Student
         br
-        a(href='/#/landing' target="_blank" style="color: #fff") I am a Teacher
+        a(href='/index.html#/landing' target="_blank" style="color: #fff") I am a Teacher
         br
-        a(href='http://localhost:3000/#/landing' target="_blank" style="color: #fff") I am a Parent
-        
+        a(href='/index.html#/landing' target="_blank" style="color: #fff") I am a Parent

@@ -19,6 +19,7 @@
     "angular-ui-router": "~0.2.12",
     "ionic": "~1.0.0-beta.13",
     "angular-loading-bar": "~0.9.0",
-    "angular-audio": "^1.7.1"
+    "angular-audio": "^1.7.1",
+    "frame-player": "^0.2.2"
   }
 }

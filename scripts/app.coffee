@@ -18,6 +18,7 @@ else
         return StatusBar.styleDefault()
       return
   )
+
 Franchino.config ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) ->
   $stateProvider.state('app',
     url: ''
@@ -47,93 +48,62 @@ Franchino.config ($stateProvider, $urlRouterProvider, $locationProvider, $httpPr
     views: menuContent:
       controller: 'BlogCtrl'
       templateUrl: 'blog.html').state('app.resume',
-    url: '/resume'
+    url: '/cast'
     views: menuContent:
-      controller: 'ResumeCtrl'
-      templateUrl: 'resume.html').state('app.contact',
+      controller: 'CastCtrl'
+      templateUrl: 'cast.html').state('app.cast',
+    url: '/expansionpacks'
+    views: menuContent:
+      controller: 'ExpansionpacksCtrl'
+      templateUrl: 'expansionpacks.html').state('app.expansionpacks',
+    url: '/book'
+    views: menuContent:
+      controller: 'BookCtrl'
+      templateUrl: 'book.html').state('app.book',
+    url: '/login'
+    views: menuContent:
+      controller: 'LoginCtrl'
+      templateUrl: 'login.html').state('app.login',
     url: '/contact'
     views: menuContent:
       controller: 'ContactCtrl'
       templateUrl: 'contact.html').state('app.doc',
-    url: '/docs/:permalink'
-    views: menuContent:
-      controller: 'DocCtrl'
-      templateUrl: 'docs/show.html').state('app.step',
-    url: '/docs/:permalink/:step'
-    views: menuContent:
-      controller: 'DocCtrl'
-      templateUrl: 'docs/show.html').state('app.job-tapcentive',
-    url: '/job-tapcentive'
-    views: menuContent:
-      controller: 'JobTapcentiveCtrl'
-      templateUrl: 'job-tapcentive.html').state('app.job-tapcentive-two',
-    url: '/job-tapcentive-two'
-    views: menuContent:
-      controller: 'JobTapcentiveTwoCtrl'
-      templateUrl: 'job-tapcentive-two.html').state('app.job-cpgio',
-    url: '/job-cpgio'
-    views: menuContent:
-      controller: 'JobCpgioCtrl'
-      templateUrl: 'job-cpgio.html').state('app.job-medycation',
-    url: '/job-medycation'
-    views: menuContent:
-      controller: 'JobMedycationCtrl'
-      templateUrl: 'job-medycation.html').state('app.job-cst',
-    url: '/job-cst'
-    views: menuContent:
-      controller: 'JobCstCtrl'
-      templateUrl: 'job-cst.html').state('app.job-koupn',
-    url: '/job-koupn'
-    views: menuContent:
-      controller: 'JobKoupnCtrl'
-      templateUrl: 'job-koupn.html').state('app.job-tround',
-    url: '/job-tround'
-    views: menuContent:
-      controller: 'JobTroundCtrl'
-      templateUrl: 'job-tround.html').state('app.job-monthlys',
-    url: '/job-monthlys'
-    views: menuContent:
-      controller: 'JobMonthlysCtrl'
-      templateUrl: 'job-monthlys.html').state('app.job-monthlys-two',
     url: '/job-monthlys-two'
     views: menuContent:
       controller: 'JobMonthlysTwoCtrl'
-      templateUrl: 'job-monthlys-two.html').state 'app.job-benchprep',
-    url: '/job-benchprep'
-    views: menuContent:
-      controller: 'JobBenchprepCtrl'
-      templateUrl: 'job-benchprep.html'
+      templateUrl: 'job-monthlys-two.html')
   $urlRouterProvider.otherwise '/'
-  $httpProvider.interceptors.push ->
-    { request: (config) ->
-      type = undefined
-      if config.url.match(/\.html$/) and !config.url.match(/^shared\//)
-        if device.tablet()
-          Franchino.config 'cfpLoadingBarProvider', (cfpLoadingBarProvider) ->
-            cfpLoadingBarProvider.latencyThreshold = 1500
 
-        else if device.mobile()
-          type = 'mobile'
-        else
-          type = 'desktop'
-        config.url = '/' + type + '/' + config.url
-      config
- }
+  $httpProvider.interceptors.push ->
+     request: (config) ->
+       if config.url.match(/\.html$/) && !config.url.match(/^shared\//)
+         if device.tablet()
+           type = 'tablet'
+         else if device.mobile()
+           type = 'mobile'
+         else
+           type = 'desktop'
+
+         config.url = "/#{type}/#{config.url}"
+
+       config
+
 Franchino.run ($state) ->
   $state.go 'app.home'
-  
+
 
 Franchino.run ($rootScope, copy) ->
   $rootScope.copy = copy
   if device.desktop()
     $rootScope.$on '$includeContentLoaded', (event) ->
+      ## Snapscroll and bg video
       $('#fullpage').fullpage
         verticalCentered: true
         sectionsColor: [
           '#1bbc9b'
           '#040b15'
           '#040b15'
-          'whitesmoke'
+          '#040b15'
           '#ccddff'
         ]
         anchors: [
@@ -167,6 +137,9 @@ Franchino.factory 'Docs', (Socket) ->
   service
 
 
+
+
+
 Franchino.controller 'HomeCtrl', [
   '$scope'
   ($scope) ->
@@ -191,7 +164,6 @@ Franchino.controller 'HomeCtrl', [
         return
 
       initEvents = ->
-
         $ = undefined
         cssId = undefined
         head = undefined
@@ -236,6 +208,7 @@ Franchino.controller 'HomeCtrl', [
       init()
       return
 ]
+
 Franchino.controller 'ContactSheetCtrl', ($scope, $ionicActionSheet) ->
 
   $scope.showActionsheet = ->
@@ -480,6 +453,9 @@ Franchino.controller 'LandingCtrl', ($scope) ->
 
 
 Franchino.controller 'JobKoupnCtrl', ($scope) ->
+Franchino.controller 'CastCtrl', ($scope) ->
+Franchino.controller 'ExpansionpacksCtrl', ($scope) ->
+Franchino.controller 'BookCtrl', ($scope) ->
 Franchino.controller 'JobMedycationCtrl', ($scope) ->
 Franchino.controller 'JobMedycationCtrl', ($scope) ->
 Franchino.controller 'JobTroundCtrl', ($scope) ->

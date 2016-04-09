@@ -5,7 +5,7 @@ html
 
     meta(charset='utf-8')
     meta(name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width")
-    meta(name='description', content='The Boy and the Computer is the first graphic novel of its kind and offers a unique educational opportunity for anyone that wants to learn about and play with innovative technology.')
+    meta(name='description', content='The Node Chronicles is the first graphic novel of its kind and offers a unique educational opportunity for anyone that wants to learn about and play with innovative technology.')
     meta(name='author', content='Gamifyed, Inc.')
     meta(name='copyright', content='GAMIFYED, Inc. Copyright (c) 2016')
     meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
@@ -17,35 +17,25 @@ html
     link(rel='stylesheet' href='/css/jquery.fullPage.css')
     link(rel='stylesheet' href='/css/examples.css')
     link(rel='stylesheet' href='/css/menu_sideslide.css')
-    link(rel='stylesheet' href='/css/bookblock.css')
     link(rel='stylesheet' href='/css/component.css')
+    link(rel='stylesheet' href='/js/frameplayer.css')
     link(rel='stylesheet' href='/fonts/font-awesome-4.2.0/css/font-awesome.min.css')  
-    link(rel='stylesheet', type='text/css', href='home/home.css')
-    link(rel='stylesheet', type='text/css', href='login/login.css')
+
     
 
     script(src='/lib/devicejs/lib/device.js')
-    script(src='/socket.io/socket.io.js') 
     script(src='https://code.jquery.com/jquery-1.11.0.min.js')
     script(src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js')
     script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery.cycle2/20140216/jquery.cycle2.min.js')
     script(src='https://code.ionicframework.com/1.0.0-beta.13/js/ionic.bundle.min.js')
-    script(type='text/javascript', src='/js/auth0-variables.js')
-    script(type='text/javascript', src='https://cdn.auth0.com/js/lock-7.12.min.js')
     script(src='cordova.js')
     script(src='/lib/underscore/underscore.js')
     script(src='/lib/angular-socket-io/socket.js')
     script(src='/js/application.js')
     script(src='/js/jquery.fullPage.js')
-    script(src='/js/bookblock.min.js')
     script(src='/js/classie.js')
-    script(src='/js/bookshelf.js')
     script(src='/js/modernizr.custom.js')
-
-    script(src='https://cdn.auth0.com/w2/auth0-angular-4.js', type='text/javascript')
-    script(src='//cdn.rawgit.com/auth0/angular-storage/master/dist/angular-storage.js', type='text/javascript')
-    script(src='//cdn.rawgit.com/auth0/angular-jwt/master/dist/angular-jwt.js', type='text/javascript')
-
+    link(rel='stylesheet' href='/js/frameplayer.js')
 
   body(ng-app='Franchino' animation='slide-left-right-ios7', ng-controller='AppCtrl')
     ng-include(src="'main.html'")

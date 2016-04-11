@@ -1,49 +1,14 @@
-.menu-wrap
-  nav.menu
-    .icon-list
-      p(style="font-size:20px;color:#c5c5c5;font-weight:bold;") Menu
-      br
-      a(href='index.html#/landing')
-        i.fa.fa-fw.fa-question
-        span What is Gamifyed
-      a(href='http://gamifyed.com' target='_blank')
-        i.fa.fa-fw.fa-shopping-cart
-        span All Products 
-      a(href='/sandbox/chapters/' target='_blank')
-        i.fa.fa-fw.fa-star
-        span Influencers
-      a(href='https://frangucc.gitbooks.io/gamifyed/content/' target='_blank')
-        i.fa.fa-fw.fa-newspaper-o
-        span Open Research
-      a(href='index.html#/cast')
-        i.fa.fa-fw.fa-bell-o
-        span Educators
-      a(href='#' target='_blank')
-        i.fa.fa-fw.fa-hand-o-right
-        span Parents
-      a(href='https://www.kickstarter.com/projects/1826823485/the-boy-and-the-computer' target='_blank')
-        i.fa.fa-fw.fa-hand-o-right
-        span Kickstarter
-      a(href='http://twitter.com/gamifyed_' target='_blank')
-        i.fa.fa-fw.fa-twitter
-        span Twitter
-      a(href='https://gamifyed.com/account/login' target='_blank')
-        i.fa.fa-fw.fa-lock
-        span Login
-      a.medium.button(href='https://gamifyed.com/account/register', style='width:100%;position:absolute;bottom:20px;background-color:#f5f5f5;color:#005bba;font-weight:bold;') Create a FREE Account
-  button#close-button.close-button
-button#open-button.menu-button
 #fullpage(ng-controller="HomeCtrl")
   #section0.section
     video#myVideo(autoplay='', loop='', muted='')
-      source(src='/img/hud2.mp4', type='video/mp4')
+      source(src='/img/hud4.mp4', type='video/mp4')
       source(src='/img/hud2.webm', type='video/webm')
     .layer(style='margin-top:0%;')
       img(src='img/logo.png', alt='Cool')
       br
       div(style="position:absolute;top:80%;width:100%;text-align:auto;")
-        img(src='img/down.gif', alt='Cool', style='width:100px;position:relative;margin-top:20%;')
-  #section2.section
+        img(src='img/down.gif', alt='Cool', style='width:100px;position:relative;margin-top:15%;')
+  #section2.section(sytle="")
     .row(style="margin-top:5%;")
       .spot.inner_page-home(style='text-align:center !important;margin-top:15%;')
         h1(style='font-size:2em;') Gamifyed inspires kids of all ages to want to learn about computer science, programming and engineering. Follow along using the 
@@ -58,15 +23,32 @@ button#open-button.menu-button
     .layer(style='position:absolute;top:25px;left:3%')
       img(src='img/logo_white.png', alt='Cool', style='width:60%;')
     .layer(style='position:absolute;top:-24px;right:10%')
-      a.medium.button(href='index.html#/landing', style='margin-top:50px;background-color:#fff;color:#040b15;') Learn More
-      a.medium.button(href='http://gamifyed.com/account/register', style='margin-top:50px;background-color:#c30000;margin-left:20px;color:#fff;') Join Now
+      
+
+      a(href='http://gamifyed.com', style='margin-top:50px;background-color:#eee;color:#040b15;').medium.button
+        i.fa.fa-fw.fa-shopping-cart
+        span &nbsp; Purchase
+      a(href='index.html#/landing', style='margin-top:50px;background-color:#eee;color:#040b15;margin-left:20px;').medium.button
+        i.fa.fa-fw.fa-arrow-circle-right
+        span &nbsp; Learn More
+      a.medium.button(href='http://gamifyed.com/account/register', style='margin-top:50px;background-color:#c30000;margin-left:20px;color:#fff;') Join or Log In
     .in_panel(style='text-align: center')
       iframe(width='100%', height='100%', src='https://www.youtube.com/embed/k6zebotwPzQ?modestbranding=1&autohide=1&showinfo=0&controls=0', frameborder='0', allowfullscreen='true')
   #section2.section
-    .layer(style='text-align: left;margin-left:10%;')
-      h1()
-        a(href='/index.html#/landing' target="_blank" style="color: #fff;") I am a Student
-        br
-        a(href='/index.html#/landing' target="_blank" style="color: #fff") I am a Teacher
-        br
-        a(href='/index.html#/landing' target="_blank" style="color: #fff") I am a Parent
+    .layer.aside_boxes(style='')
+      h1(style='color:#fff !important;width:50%;text-align:center;margin:0px auto;') Meet dozens of real world influencers moving our planet ahead with science and technology
+      br
+      br
+      a(href='/sandbox/chapters')
+       img(src='./img/faces.jpg' width='60%')
+    a(href='/sandbox/chapters', style='margin-top:50px;background-color:#c30000;color:#fff;').medium.button
+      i.fa.fa-fw.fa-group
+      span &nbsp; Meet the Influencers
+  #section4.section.iama
+    div(style="width:33.33%;height:100%;background-color:#eaeaea;float:left;background-image:url('./img/iamstudent.jpg');background-size:cover;")
+      a.large.button(href='http://gamifyed.com/account/register', style='position:absolute;bottom:20px;left:3%;background-color:#0077f3;color:#fff !important;') BEGIN
+    div(style="width:33.33%;height:100%;background-color:#e0e0e0;float:left;background-image:url('./img/iameducator_dim2.jpg');background-size:cover;")
+      a.large.button(href='http://gamifyed.com/account/register', style='position:absolute;bottom:20px;left:36%;background-color:#f5f5f5;color:#040b15 !important;') FALL 2016 BETA PROGRAM
+    div(style="width:33.33%;height:100%;background-color:#d3d3d3;float:left;background-image:url('./img/iamparent.jpg');background-size:cover;")
+      a.large.button(href='http://gamifyed.com/account/register', style='position:absolute;bottom:20px;left:70%;background-color:#0077f3;color:#fff !important;') CREATE PARENT ACCOUNT
+    div.clear

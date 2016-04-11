@@ -216,7 +216,7 @@ Franchino.controller 'ContactSheetCtrl', ($scope, $ionicActionSheet) ->
       titleText: 'Contact Franchino'
       buttons: [
         { text: 'Github <i class="icon ion-share"></i>' }
-        { text: 'Email Me <i class="icon ion-email"></i>' }
+        { text: 'Contact Us <i class="icon ion-email"></i>' }
         { text: 'Twitter <i class="icon ion-social-twitter"></i>' }
         { text: '224-241-9189 <i class="icon ion-ios-telephone"></i>' }
       ]
@@ -228,9 +228,9 @@ Franchino.controller 'ContactSheetCtrl', ($scope, $ionicActionSheet) ->
         if index == 2
           window.location.href = '224-241-9189'
         if index == 2
-          window.location.href = 'http://twitter.com/franchino_che'
+          window.location.href = 'http://twitter.com/gamifyed_'
         if index == 1
-          window.location.href = 'mailto:franchino.nonce@gmail.com'
+          window.location.href = 'mailto:frank@fye2.com'
         if index == 0
           window.location.href = 'http://github.com/frangucc'
         true
@@ -427,33 +427,146 @@ Franchino.controller 'JobTapcentiveTwoCtrl', ($scope) ->
 Franchino.controller 'JobCpgioCtrl', ($scope) ->
 Franchino.controller 'JobMedycationCtrl', ($scope) ->
 Franchino.controller 'JobCstCtrl', ($scope) ->
-Franchino.controller 'LandingCtrl', ($scope) ->
-  #youtube script
-  tag = document.createElement("script")
-  tag.src = "//www.youtube.com/iframe_api"
-  firstScriptTag = document.getElementsByTagName("script")[0]
-  firstScriptTag.parentNode.insertBefore tag, firstScriptTag
-  player = undefined
-  onYouTubeIframeAPIReady = ->
-    player = new YT.Player("player",
-      height: "244"
-      width: "434"
-      videoId: "AkyQgpqRyBY" # youtube video id
-      playerVars:
-        autoplay: 0
-        rel: 0
-        showinfo: 0
+Franchino.controller 'LandingCtrl', [
+  '$scope'
+  ($scope) ->
+    # TODO: Move this menu into a directive
+    do ->
+      bodyEl = undefined
+      closebtn = undefined
+      content = undefined
+      init = undefined
+      initEvents = undefined
+      isOpen = undefined
+      openbtn = undefined
+      toggleMenu = undefined
+      bodyEl = document.body
+      content = document.querySelector('.content-wrap')
+      openbtn = document.getElementById('open-button')
+      closebtn = document.getElementById('close-button')
+      isOpen = false
 
-      events:
-        onStateChange: onPlayerStateChange
-    )
+      init = ->
+        initEvents()
+        return
 
-  onPlayerStateChange = (event) ->
-    $(".start-video").fadeIn "normal"  if event.data is YT.PlayerState.ENDED
+      initEvents = ->
+        $ = undefined
+        cssId = undefined
+        head = undefined
+        link = undefined
+        if device.desktop()
+          
+        else if device.mobile()
+          $ = document
+          cssId = 'myCss'
+          if !$.getElementById(cssId)
+            head = $.getElementsByTagName('head')[0]
+            link = $.createElement('link')
+            link.id = cssId
+            link.rel = 'stylesheet'
+            link.type = 'text/css'
+            link.href = 'https://code.ionicframework.com/1.0.0-beta.13/css/ionic.min.css'
+            link.media = 'all'
+            head.appendChild link
+        if device.desktop()
+          openbtn.addEventListener 'click', toggleMenu
+          if closebtn
+            closebtn.addEventListener 'click', toggleMenu
+          content.addEventListener 'click', (ev) ->
+            target = undefined
+            target = ev.target
+            if isOpen and target != openbtn
+              toggleMenu()
+            return
+          return
+        else
 
+        
 
+      toggleMenu = ->
+        if isOpen
+          classie.remove bodyEl, 'show-menu'
+        else
+          classie.add bodyEl, 'show-menu'
+        isOpen = !isOpen
+        return
+
+      init()
+      return
+]
+
+Franchino.controller 'CastCtrl', [
+  '$scope'
+  ($scope) ->
+    # TODO: Move this menu into a directive can't keep adding this like this everywhere
+    onPlayerStateChange = (event) ->
+      $(".start-video").fadeIn "normal"  if event.data is YT.PlayerState.ENDED
+    do ->
+      bodyEl = undefined
+      closebtn = undefined
+      content = undefined
+      init = undefined
+      initEvents = undefined
+      isOpen = undefined
+      openbtn = undefined
+      toggleMenu = undefined
+      bodyEl = document.body
+      content = document.querySelector('.content-wrap')
+      openbtn = document.getElementById('open-button')
+      closebtn = document.getElementById('close-button')
+      isOpen = false
+
+      init = ->
+        initEvents()
+        return
+
+      initEvents = ->
+        $ = undefined
+        cssId = undefined
+        head = undefined
+        link = undefined
+        if device.desktop()
+          
+        else if device.mobile()
+          $ = document
+          cssId = 'myCss'
+          if !$.getElementById(cssId)
+            head = $.getElementsByTagName('head')[0]
+            link = $.createElement('link')
+            link.id = cssId
+            link.rel = 'stylesheet'
+            link.type = 'text/css'
+            link.href = 'https://code.ionicframework.com/1.0.0-beta.13/css/ionic.min.css'
+            link.media = 'all'
+            head.appendChild link
+        if device.desktop()
+          openbtn.addEventListener 'click', toggleMenu
+          if closebtn
+            closebtn.addEventListener 'click', toggleMenu
+          content.addEventListener 'click', (ev) ->
+            target = undefined
+            target = ev.target
+            if isOpen and target != openbtn
+              toggleMenu()
+            return
+          return
+        else
+
+        
+
+      toggleMenu = ->
+        if isOpen
+          classie.remove bodyEl, 'show-menu'
+        else
+          classie.add bodyEl, 'show-menu'
+        isOpen = !isOpen
+        return
+
+      init()
+      return
+]
 Franchino.controller 'JobKoupnCtrl', ($scope) ->
-Franchino.controller 'CastCtrl', ($scope) ->
 Franchino.controller 'ExpansionpacksCtrl', ($scope) ->
 Franchino.controller 'BookCtrl', ($scope) ->
 Franchino.controller 'JobMedycationCtrl', ($scope) ->

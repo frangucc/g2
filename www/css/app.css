@@ -22,6 +22,13 @@
   margin: 10%;
   position: absolute; }
 
+.iama {
+  width: 33%;
+  height: 100%;
+  float: left; }
+  .iama h1 {
+    color: #040b15; }
+
 .spot h1 {
   color: #fff !important;
   font-weight: 300 !important; }
@@ -196,7 +203,8 @@ body > ng-include > ion-nav-view > div > ion-pane > header {
 
 .aside_boxes h1 {
   font-size: 1.8em;
-  font-weight: 300 !important; }
+  font-weight: 300 !important;
+  letter-spacing: 0px !important; }
 .aside_boxes p {
   font-size: 1em; }
 

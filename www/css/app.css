@@ -207,6 +207,23 @@ body > ng-include > ion-nav-view > div > ion-pane > header {
   letter-spacing: 0px !important; }
 .aside_boxes p {
   font-size: 1em; }
+.aside_boxes h8 {
+  margin: 0px auto;
+  padding: 0px auto; }
+
+.product_boxes div {
+  padding-left: 5% !important;
+  padding-right: 5% !important; }
+.product_boxes a {
+  width: 80%;
+  margin-top: -10%;
+  font-weight: bolder !important;
+  font-size: 18px; }
+.product_boxes p {
+  font-size: 1em; }
+.product_boxes h8 {
+  margin: 0px auto;
+  padding: 0px auto; }
 
 #page-home {
   background-color: #fff !important;

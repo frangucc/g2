@@ -40,6 +40,10 @@ Franchino.config ($stateProvider, $urlRouterProvider, $locationProvider, $httpPr
     views: menuContent:
       controller: 'LandingCtrl'
       templateUrl: 'landing.html').state('app.landing',
+    url: '/node'
+    views: menuContent:
+      controller: 'NodeCtrl'
+      templateUrl: 'node.html').state('app.node',
     url: '/about'
     views: menuContent:
       controller: 'AboutCtrl'
@@ -220,6 +224,76 @@ Franchino.controller 'HomeCtrl', [
       init()
       return
 ]
+
+Franchino.controller 'ParentsCtrl', [
+  '$scope'
+  ($scope) ->
+    # TODO: Move this menu into a directive
+    do ->
+      bodyEl = undefined
+      closebtn = undefined
+      content = undefined
+      init = undefined
+      initEvents = undefined
+      isOpen = undefined
+      openbtn = undefined
+      toggleMenu = undefined
+      bodyEl = document.body
+      content = document.querySelector('.content-wrap')
+      openbtn = document.getElementById('open-button')
+      closebtn = document.getElementById('close-button')
+      isOpen = false
+
+      init = ->
+        initEvents()
+        return
+
+      initEvents = ->
+        $ = undefined
+        cssId = undefined
+        head = undefined
+        link = undefined
+        if device.desktop()
+          
+        else if device.mobile()
+          $ = document
+          cssId = 'myCss'
+          if !$.getElementById(cssId)
+            head = $.getElementsByTagName('head')[0]
+            link = $.createElement('link')
+            link.id = cssId
+            link.rel = 'stylesheet'
+            link.type = 'text/css'
+            link.href = 'https://code.ionicframework.com/1.0.0-beta.13/css/ionic.min.css'
+            link.media = 'all'
+            head.appendChild link
+        if device.desktop()
+          openbtn.addEventListener 'click', toggleMenu
+          if closebtn
+            closebtn.addEventListener 'click', toggleMenu
+          content.addEventListener 'click', (ev) ->
+            target = undefined
+            target = ev.target
+            if isOpen and target != openbtn
+              toggleMenu()
+            return
+          return
+        else
+
+        
+
+      toggleMenu = ->
+        if isOpen
+          classie.remove bodyEl, 'show-menu'
+        else
+          classie.add bodyEl, 'show-menu'
+        isOpen = !isOpen
+        return
+
+      init()
+      return
+]
+
 
 Franchino.controller 'ContactSheetCtrl', ($scope, $ionicActionSheet) ->
 
@@ -508,7 +582,76 @@ Franchino.controller 'LandingCtrl', [
       return
 ]
 
-Franchino.controller 'CastCtrl', [
+Franchino.controller 'ProductsCtrl', [
+  '$scope'
+  ($scope) ->
+    # TODO: Move this menu into a directive
+    do ->
+      bodyEl = undefined
+      closebtn = undefined
+      content = undefined
+      init = undefined
+      initEvents = undefined
+      isOpen = undefined
+      openbtn = undefined
+      toggleMenu = undefined
+      bodyEl = document.body
+      content = document.querySelector('.content-wrap')
+      openbtn = document.getElementById('open-button')
+      closebtn = document.getElementById('close-button')
+      isOpen = false
+
+      init = ->
+        initEvents()
+        return
+
+      initEvents = ->
+        $ = undefined
+        cssId = undefined
+        head = undefined
+        link = undefined
+        if device.desktop()
+          
+        else if device.mobile()
+          $ = document
+          cssId = 'myCss'
+          if !$.getElementById(cssId)
+            head = $.getElementsByTagName('head')[0]
+            link = $.createElement('link')
+            link.id = cssId
+            link.rel = 'stylesheet'
+            link.type = 'text/css'
+            link.href = 'https://code.ionicframework.com/1.0.0-beta.13/css/ionic.min.css'
+            link.media = 'all'
+            head.appendChild link
+        if device.desktop()
+          openbtn.addEventListener 'click', toggleMenu
+          if closebtn
+            closebtn.addEventListener 'click', toggleMenu
+          content.addEventListener 'click', (ev) ->
+            target = undefined
+            target = ev.target
+            if isOpen and target != openbtn
+              toggleMenu()
+            return
+          return
+        else
+
+        
+
+      toggleMenu = ->
+        if isOpen
+          classie.remove bodyEl, 'show-menu'
+        else
+          classie.add bodyEl, 'show-menu'
+        isOpen = !isOpen
+        return
+
+      init()
+      return
+]
+
+Franchino.controller 'ExpansionpacksCtrl', [
   '$scope'
   ($scope) ->
     # TODO: Move this menu into a directive can't keep adding this like this everywhere
@@ -579,7 +722,75 @@ Franchino.controller 'CastCtrl', [
       return
 ]
 Franchino.controller 'JobKoupnCtrl', ($scope) ->
-Franchino.controller 'ExpansionpacksCtrl', ($scope) ->
+Franchino.controller 'LandingCtrl', [
+  '$scope'
+  ($scope) ->
+    # TODO: Move this menu into a directive
+    do ->
+      bodyEl = undefined
+      closebtn = undefined
+      content = undefined
+      init = undefined
+      initEvents = undefined
+      isOpen = undefined
+      openbtn = undefined
+      toggleMenu = undefined
+      bodyEl = document.body
+      content = document.querySelector('.content-wrap')
+      openbtn = document.getElementById('open-button')
+      closebtn = document.getElementById('close-button')
+      isOpen = false
+
+      init = ->
+        initEvents()
+        return
+
+      initEvents = ->
+        $ = undefined
+        cssId = undefined
+        head = undefined
+        link = undefined
+        if device.desktop()
+          
+        else if device.mobile()
+          $ = document
+          cssId = 'myCss'
+          if !$.getElementById(cssId)
+            head = $.getElementsByTagName('head')[0]
+            link = $.createElement('link')
+            link.id = cssId
+            link.rel = 'stylesheet'
+            link.type = 'text/css'
+            link.href = 'https://code.ionicframework.com/1.0.0-beta.13/css/ionic.min.css'
+            link.media = 'all'
+            head.appendChild link
+        if device.desktop()
+          openbtn.addEventListener 'click', toggleMenu
+          if closebtn
+            closebtn.addEventListener 'click', toggleMenu
+          content.addEventListener 'click', (ev) ->
+            target = undefined
+            target = ev.target
+            if isOpen and target != openbtn
+              toggleMenu()
+            return
+          return
+        else
+
+        
+
+      toggleMenu = ->
+        if isOpen
+          classie.remove bodyEl, 'show-menu'
+        else
+          classie.add bodyEl, 'show-menu'
+        isOpen = !isOpen
+        return
+
+      init()
+      return
+]
+
 Franchino.controller 'BookCtrl', [
   '$scope'
   ($scope) ->
@@ -650,7 +861,8 @@ Franchino.controller 'BookCtrl', [
       init()
       return
 ]
-Franchino.controller 'ProductsCtrl', [
+
+Franchino.controller 'CastCtrl', [
   '$scope'
   ($scope) ->
     # TODO: Move this menu into a directive can't keep adding this like this everywhere
@@ -720,8 +932,213 @@ Franchino.controller 'ProductsCtrl', [
       init()
       return
 ]
-Franchino.controller 'ParentsCtrl', ($scope) ->
-Franchino.controller 'EducatorsCtrl', ($scope) ->
+
+Franchino.controller 'NodeCtrl', [
+  '$scope'
+  ($scope) ->
+    # TODO: Move this menu into a directive can't keep adding this like this everywhere
+    onPlayerStateChange = (event) ->
+      $(".start-video").fadeIn "normal"  if event.data is YT.PlayerState.ENDED
+    do ->
+      bodyEl = undefined
+      closebtn = undefined
+      content = undefined
+      init = undefined
+      initEvents = undefined
+      isOpen = undefined
+      openbtn = undefined
+      toggleMenu = undefined
+      bodyEl = document.body
+      content = document.querySelector('.content-wrap')
+      openbtn = document.getElementById('open-button')
+      closebtn = document.getElementById('close-button')
+      isOpen = false
+
+      init = ->
+        initEvents()
+        return
+
+      initEvents = ->
+        $ = undefined
+        cssId = undefined
+        head = undefined
+        link = undefined
+        if device.desktop()
+          
+        else if device.mobile()
+          $ = document
+          cssId = 'myCss'
+          if !$.getElementById(cssId)
+            head = $.getElementsByTagName('head')[0]
+            link = $.createElement('link')
+            link.id = cssId
+            link.rel = 'stylesheet'
+            link.type = 'text/css'
+            link.href = 'https://code.ionicframework.com/1.0.0-beta.13/css/ionic.min.css'
+            link.media = 'all'
+            head.appendChild link
+        if device.desktop()
+          openbtn.addEventListener 'click', toggleMenu
+          if closebtn
+            closebtn.addEventListener 'click', toggleMenu
+          content.addEventListener 'click', (ev) ->
+            target = undefined
+            target = ev.target
+            if isOpen and target != openbtn
+              toggleMenu()
+            return
+          return
+        else
+
+        
+
+      toggleMenu = ->
+        if isOpen
+          classie.remove bodyEl, 'show-menu'
+        else
+          classie.add bodyEl, 'show-menu'
+        isOpen = !isOpen
+        return
+
+      init()
+      return
+]
+Franchino.controller 'EducatorsCtrl', [
+  '$scope'
+  ($scope) ->
+
+    do ->
+      bodyEl = undefined
+      closebtn = undefined
+      content = undefined
+      init = undefined
+      initEvents = undefined
+      isOpen = undefined
+      openbtn = undefined
+      toggleMenu = undefined
+      bodyEl = document.body
+      content = document.querySelector('.content-wrap')
+      openbtn = document.getElementById('open-button')
+      closebtn = document.getElementById('close-button')
+      isOpen = false
+
+      init = ->
+        initEvents()
+        return
+
+      initEvents = ->
+        $ = undefined
+        cssId = undefined
+        head = undefined
+        link = undefined
+        if device.desktop()
+          
+        else if device.mobile()
+          $ = document
+          cssId = 'myCss'
+          if !$.getElementById(cssId)
+            head = $.getElementsByTagName('head')[0]
+            link = $.createElement('link')
+            link.id = cssId
+            link.rel = 'stylesheet'
+            link.type = 'text/css'
+            link.href = 'https://code.ionicframework.com/1.0.0-beta.13/css/ionic.min.css'
+            link.media = 'all'
+            head.appendChild link
+        if device.desktop()
+          openbtn.addEventListener 'click', toggleMenu
+          if closebtn
+            closebtn.addEventListener 'click', toggleMenu
+          content.addEventListener 'click', (ev) ->
+            target = undefined
+            target = ev.target
+            if isOpen and target != openbtn
+              toggleMenu()
+            return
+          return
+        else
+
+        
+
+      toggleMenu = ->
+        if isOpen
+          classie.remove bodyEl, 'show-menu'
+        else
+          classie.add bodyEl, 'show-menu'
+        isOpen = !isOpen
+        return
+
+      init()
+      return
+]
+Franchino.controller 'HomeCtrl', [
+  '$scope'
+  ($scope) ->
+
+    do ->
+      bodyEl = undefined
+      closebtn = undefined
+      content = undefined
+      init = undefined
+      initEvents = undefined
+      isOpen = undefined
+      openbtn = undefined
+      toggleMenu = undefined
+      bodyEl = document.body
+      content = document.querySelector('.content-wrap')
+      openbtn = document.getElementById('open-button')
+      closebtn = document.getElementById('close-button')
+      isOpen = false
+
+      init = ->
+        initEvents()
+        return
+
+      initEvents = ->
+        $ = undefined
+        cssId = undefined
+        head = undefined
+        link = undefined
+        if device.desktop()
+          
+        else if device.mobile()
+          $ = document
+          cssId = 'myCss'
+          if !$.getElementById(cssId)
+            head = $.getElementsByTagName('head')[0]
+            link = $.createElement('link')
+            link.id = cssId
+            link.rel = 'stylesheet'
+            link.type = 'text/css'
+            link.href = 'https://code.ionicframework.com/1.0.0-beta.13/css/ionic.min.css'
+            link.media = 'all'
+            head.appendChild link
+        if device.desktop()
+          openbtn.addEventListener 'click', toggleMenu
+          if closebtn
+            closebtn.addEventListener 'click', toggleMenu
+          content.addEventListener 'click', (ev) ->
+            target = undefined
+            target = ev.target
+            if isOpen and target != openbtn
+              toggleMenu()
+            return
+          return
+        else
+
+        
+
+      toggleMenu = ->
+        if isOpen
+          classie.remove bodyEl, 'show-menu'
+        else
+          classie.add bodyEl, 'show-menu'
+        isOpen = !isOpen
+        return
+
+      init()
+      return
+]
 Franchino.controller 'JobMedycationCtrl', ($scope) ->
 Franchino.controller 'JobMedycationCtrl', ($scope) ->
 Franchino.controller 'JobTroundCtrl', ($scope) ->

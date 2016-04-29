@@ -18,7 +18,7 @@ else
         return StatusBar.styleDefault()
       return
   )
-
+0
 Franchino.config ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) ->
   $stateProvider.state('app',
     url: ''

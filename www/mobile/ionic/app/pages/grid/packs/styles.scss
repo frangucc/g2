@@ -1,0 +1,24 @@
+.grid-page {
+  
+  ion-col.mast {
+    background-color: #000;
+    padding: 0px;
+    border: 0px solid #ddd;
+    border-radius: 0px;
+    text-align: center;
+  }
+  h1 {
+    color:#fff;font-weight:normal;font-size:1.4em;line-height:27px;padding-top:20px;
+  }
+  p {
+    color:#fff;
+    text-align: left;
+    line-height: 24px;
+  }
+}
+
+.toolbar-background {
+  	background-color:#e5000a;
+  	border:0px solid #e5000a !important;
+  	color:#fff;
+  }

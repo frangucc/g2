@@ -4,7 +4,7 @@
   "main": "index.js",
   "description": "tapcentive: tapping into the future",
   "engines": {
-    "node": "4.1.1"
+    "node": "5.2.0"
   },
   "dependencies": {
     "angular-loading-bar": "^0.9.0",

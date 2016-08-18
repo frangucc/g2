@@ -1,9 +1,0 @@
-{
-  "firebase": "g2beta",
-  "public": "www",
-  "ignore": [
-    "firebase.json",
-    "**/.*",
-    "**/node_modules/**"
-  ]
-}
